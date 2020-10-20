@@ -1,0 +1,8 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Options -Indexes
+RewriteBase /
+RewriteCond %{REQUEST_URI} !public/(.*) [NC]
+RewriteRule ^(.*)$ index.php [L]
+</IfModule>
