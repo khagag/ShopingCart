@@ -1,0 +1,8 @@
+{
+    "name": "kareem/shopping_cart",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "phpunit/phpunit": "^9.4"
+    }
+}
