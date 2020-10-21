@@ -4,28 +4,40 @@ import Home from './pages/Home';
 import {
   Button,Grid
 } from '@material-ui/core';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+const initialState = {
+  count : 0,
+  items : {}
+};
+function reducer(state=initialState,action){
+  console.log(action);
+  switch (action.type) {
+    case 'Add':
+      return {
+        count : (state.count + action.count),
+        items : {}
+      };
+      break;
+    default:
+      return state;
+  }
+}
+const store = createStore(reducer);
 
 function App() {
   return (
-    <>
-    <Home/>
-    <Grid
-      container
-      direction="row"
-      justify="space-evenly"
-      alignItems="baseline"
-    >
-    <Button variant="contained" xs color="primary">
-      Hello World
-    </Button>
-    <Button variant="contained" xs color="primary">
-      Hello World
-    </Button>
-    <Button variant="contained" xs color="primary">
-          Hello World
-        </Button>
-    </Grid>
-    </>
+    <Provider store={store}>
+      <Home/>
+      <Grid
+        container
+        direction="row"
+        justify="space-evenly"
+        alignItems="baseline"
+      >
+      </Grid>
+    </Provider>
   );
 }
 

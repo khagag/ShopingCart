@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-
+import {connect} from 'react-redux';
 
 
 
@@ -21,9 +21,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CartItem() {
+function CartItem(props) {
   const classes = useStyles();
+  const Add =()=>{
+    console.log('ADD');
+    props.dispatch({
+      type:'Add',
+      count : 1,
+      item_id : 2
+    });
 
+  };
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -43,10 +51,16 @@ export default function CartItem() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button variant="contained" xs color="primary">
+        <Button onClick={Add} variant="contained" xs color="primary">
           Add to cart
         </Button>
       </CardActions>
     </Card>
   );
 }
+
+const mapStateToProps = (state)=> ({
+  count :state.count
+});
+
+export default connect(mapStateToProps)(CartItem);

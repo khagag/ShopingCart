@@ -3,6 +3,8 @@ import {
   Button,Grid,AppBar,Toolbar,IconButton,Badge
 } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import {connect} from 'react-redux';
+
 
 class HeaderNav extends Component{
   render(){
@@ -10,7 +12,7 @@ class HeaderNav extends Component{
       <AppBar position="static">
         <Toolbar>
           <IconButton aria-label="cart">
-            <Badge badgeContent={4} color="secondary">
+            <Badge badgeContent={this.props.count.toString()} color="secondary">
               <ShoppingCartIcon color='white' />
             </Badge>
           </IconButton>
@@ -19,5 +21,8 @@ class HeaderNav extends Component{
     );
   }
 }
+const mapStateToProps = (state)=> ({
+  count :state.count
+});
 
-export default HeaderNav;
+export default connect(mapStateToProps)(HeaderNav);
