@@ -1,22 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Home from './pages/Home';
 import {
-  Button,Grid,AppBar,Toolbar,IconButton,Badge
+  Button,Grid
 } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function App() {
   return (
     <>
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton aria-label="cart">
-          <Badge badgeContent={4} color="secondary">
-            <ShoppingCartIcon color='white' />
-          </Badge>
-        </IconButton>
-      </Toolbar>
-    </AppBar>
+    <Home/>
     <Grid
       container
       direction="row"
