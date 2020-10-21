@@ -3,6 +3,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "phpunit/phpunit": "^9.4"
+        "phpunit/phpunit": "^9.4",
+        "guzzlehttp/guzzle": "^7.2"
     }
 }
