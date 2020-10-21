@@ -1,12 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
+import {
+  Button,Grid,AppBar,Toolbar,IconButton,Badge
+} from '@material-ui/core';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function App() {
   return (
-    <Button variant="contained" color="primary">
+    <>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton aria-label="cart">
+          <Badge badgeContent={4} color="secondary">
+            <ShoppingCartIcon color='white' />
+          </Badge>
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+    <Grid
+      container
+      direction="row"
+      justify="space-evenly"
+      alignItems="baseline"
+    >
+    <Button variant="contained" xs color="primary">
       Hello World
     </Button>
+    <Button variant="contained" xs color="primary">
+      Hello World
+    </Button>
+    <Button variant="contained" xs color="primary">
+          Hello World
+        </Button>
+    </Grid>
+    </>
   );
 }
 
