@@ -1,5 +1,6 @@
 # ShopingCart
 
+![Image of Yaktocat](/public/shot.png)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -31,7 +32,7 @@ Finally run your server and you are ready to go.
 
  - Add ORM to fit the model part
  - Add Night Mode
- 
+
 ### Testing
 To test the end points just type the next commands.
 ```sh
@@ -57,4 +58,3 @@ License
 ----
 
 MIT
-
