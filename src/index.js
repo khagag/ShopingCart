@@ -13,12 +13,21 @@ const initialState = {
 };
 function reducer(state=initialState,action){
   console.log(action);
+  let tmp = {};
   switch (action.type) {
     case 'Add':
-      return {
+      tmp ={
         count : (state.count + action.count),
-        items : {}
       };
+      if(action.item.id in state.items){
+        state.items[action.id].count += 1;
+        tmp.items = state.items;
+      }else{
+        state.items[action.item.id]=action.item;
+        tmp.items = state.items;
+      }
+      console.log(state);
+      return tmp;
       break;
     default:
       return state;

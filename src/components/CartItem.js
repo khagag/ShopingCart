@@ -28,7 +28,13 @@ function CartItem(props) {
     props.dispatch({
       type:'Add',
       count : 1,
-      item_id : 2
+      id:2,
+      item :{
+        id : 2,
+        name : 'tshirt',
+        price : 230,
+        count: 1
+      }
     });
 
   };
