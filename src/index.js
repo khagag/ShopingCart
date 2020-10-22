@@ -6,6 +6,13 @@ import {
 } from '@material-ui/core';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Cart from './pages/Cart';
+
 
 const initialState = {
   count : 0,
@@ -38,14 +45,14 @@ const store = createStore(reducer);
 function App() {
   return (
     <Provider store={store}>
-      <Home/>
-      <Grid
-        container
-        direction="row"
-        justify="space-evenly"
-        alignItems="baseline"
-      >
-      </Grid>
+      <Router>
+        <Switch>
+          <Route path="/cart" component={Cart}/>
+          <Route path="/" component={Home}/>
+
+
+        </Switch>
+      </Router>
     </Provider>
   );
 }

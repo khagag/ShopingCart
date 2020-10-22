@@ -30,9 +30,9 @@ if($parameters[1]=='api'){
         json_encode($data));
       break;
     case 'checkout':
-      $subtotal = $s_discount ,$t_discount,$total = 0.0;
+      $subtotal = $s_discount =$t_discount=$total = 0.0;
       if($_SERVER['REQUEST_METHOD']== 'POST'){
-        for($_POST['items'] as $item){
+        foreach($_POST['items'] as $item){
           $subtotal+=$item->count * $data[$item->id]->price;
           if($data[$item->id] == 3){
             $s_discount+=$item->count * $data[$item->id]->price * 0.1;
