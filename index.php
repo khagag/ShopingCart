@@ -22,11 +22,10 @@ if($parameters[1]=='api'){
       // code...
       respond(
         json_encode([
-          ['T-shirt'=>50],
-          ['T-shirt'=>50],
-          ['T-shirt'=>50],
-          ['T-shirt'=>50],
-          ['T-shirt'=>50],
+          ['name'=>'T-shirt ','price'=>10.99,'id'=>1],
+          ['name'=>'Pants','price'=>14.99,'id'=>2],
+          ['name'=>'Jacket','price'=>19.99,'id'=>3],
+          ['name'=>'Shoes','price'=>24.99,'id'=>4],
         ]));
       break;
     case 'checkout':
