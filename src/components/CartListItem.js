@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import {connect} from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ComplexGrid() {
+function CartListItem(props) {
   const classes = useStyles();
 
   return (
@@ -42,13 +43,13 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  Standard license
+                  {props.name}
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  {props.price}
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
+                  {props.item_count}
                 </Typography>
               </Grid>
               <Grid item>
@@ -58,7 +59,7 @@ export default function ComplexGrid() {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
+              <Typography variant="subtitle1">${props.price}</Typography>
             </Grid>
           </Grid>
         </Grid>
@@ -66,3 +67,10 @@ export default function ComplexGrid() {
     </div>
   );
 }
+
+const mapStateToProps = (state)=> ({
+  count :state.count,
+  item : state.item
+});
+
+export default connect(mapStateToProps)(CartListItem);

@@ -40,7 +40,7 @@ class Cart extends Component{
   // const numbers = [1, 2, 3, 4, 5];
     let listItems = Object.keys(this.props.items).map((item) =>
         <GridListTile  cols={2}>
-          <CartListItem name={this.props.items[item].name} id={this.props.items[item].id} price={this.props.items[item].price}/>
+          <CartListItem item_count={this.props.items[item].count} name={this.props.items[item].name} id={this.props.items[item].id} price={this.props.items[item].price}/>
         </GridListTile >
       );
     return(

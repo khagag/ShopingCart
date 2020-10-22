@@ -65,7 +65,8 @@ function CartItem(props) {
 }
 
 const mapStateToProps = (state)=> ({
-  count :state.count
+  count :state.count,
+  item : state.item
 });
 
 export default connect(mapStateToProps)(CartItem);
