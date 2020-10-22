@@ -1,6 +1,7 @@
 import React ,{Component} from 'react';
 import HeaderNav from '../components/HeaderNav';
 import CartItem from '../components/CartItem';
+import CartListItem from '../components/CartListItem';
 import {Grid,GridList,GridListTile} from '@material-ui/core';
 import {connect} from 'react-redux';
 const axios = require('axios');
@@ -39,7 +40,7 @@ class Cart extends Component{
   // const numbers = [1, 2, 3, 4, 5];
     let listItems = Object.keys(this.props.items).map((item) =>
         <GridListTile  cols={2}>
-          <CartItem name={this.props.items[item].name} id={this.props.items[item].id} price={this.props.items[item].price}/>
+          <CartListItem name={this.props.items[item].name} id={this.props.items[item].id} price={this.props.items[item].price}/>
         </GridListTile >
       );
     return(
