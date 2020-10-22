@@ -15,7 +15,7 @@ class Home extends Component{
       .then(res => {
         let l = res.data.map((item) =>
             <Grid item xs={3}>
-              <CartItem/>
+              <CartItem name={item.name} id={item.id} price={item.price}/>
             </Grid>
           );
           this.setState({listItems:l});

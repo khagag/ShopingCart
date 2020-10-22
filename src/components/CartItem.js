@@ -28,11 +28,11 @@ function CartItem(props) {
     props.dispatch({
       type:'Add',
       count : 1,
-      id:2,
+      id:props.id,
       item :{
-        id : 2,
-        name : 'tshirt',
-        price : 230,
+        id : props.id,
+        name : props.name,
+        price : props.price,
         count: 1
       }
     });
@@ -48,11 +48,10 @@ function CartItem(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {props.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {props.price}
           </Typography>
         </CardContent>
       </CardActionArea>
